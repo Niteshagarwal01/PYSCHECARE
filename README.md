@@ -1,6 +1,3 @@
-Absolutely! Here's a more detailed and comprehensive *README description* for PsycheCare that covers all the core aspects:
-
----
 
 ## PsycheCare
 
@@ -47,5 +44,4 @@ PsycheCare aims to make mental health support accessible, personal, and stigma-f
 
 ---
 
-Let me know if you want a version that includes installation instructions, tech stack, or contributor guidelines!
 
