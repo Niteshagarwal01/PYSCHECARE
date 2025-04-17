@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | PsycheCare</title>
+
+    <script src="https://kit.fontawesome.com/1b2b6a64da.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Images/B_icon01.png">
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 2rem;
+            background-color: var(--light-color);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(127, 90, 240, 0.2);
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .login-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .login-btn:hover {
+            background-color: #6a4cc7;
+        }
+        
+        .return-home {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .return-home a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .return-home a:hover {
+            text-decoration: underline;
+        }
+
+        .login-illustration {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-illustration img {
+            max-width: 150px;
+            filter: drop-shadow(0 5px 15px rgba(127, 90, 240, 0.3));
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- +++ HEADER +++ -->
+    <div class="header">
+        <div class="logo-cantainer">
+            <h2 class="logo">PsycheCare.</h2>
+        </div>
+
+        <div class="nav-and-btn-cont">
+            <div class="nav-list-cont">
+                <ul class="nav-ul">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html#SECTION-3">CHAT BOT</a></li>
+                    <li><a href="otherHTML/statistics.html">STATISTICS</a></li>
+                    <li><a href="index.html#FOOTER">CONTACT</a></li>
+                    <li><a href="login.html" class="active">LOGIN</a></li>
+                </ul>
+            </div>
+
+            <div class="hamBurger">
+                <diV class="line line1"></diV>
+                <div class="mid-line-cont">
+                    <div class="line mid-line1"></div>
+                    <div class="line mid-line2"></div>
+                </div>
+                <diV class="line line3"></diV>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-view-nav-cont" id="mobile-nav">
+        <div class="mobile-view-nav-head">
+            <p>Menu</p>
+        </div>
+
+        <div class="mobile-view-nav-list">
+            <ul>
+                <li><a href="index.html" class="mobile-view-list">HOME</a></li>
+                <li><a href="index.html#SECTION-3" class="mobile-view-list">CHAT BOT</a></li>
+                <li><a href="otherHTML/statistics.html" class="mobile-view-list">STATISTICS</a></li>
+                <li><a href="index.html#FOOTER" class="mobile-view-list">CONTACT</a></li>
+                <li><a href="login.html" class="mobile-view-list">LOGIN</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <div class="login-header">
+            <div class="login-illustration">
+                <img src="Images/illustration-new/home-bot-img.png" alt="Login">
+            </div>
+            <h2 style="color: var(--dark-color);">Welcome to <span style="color: var(--primary-color);">PsycheCare</span></h2>
+            <p style="color: var(--dark-color); font-size: 0.9rem;">Sign in to access your personal dashboard</p>
+        </div>
+
+        <form action="login.php" method="post" class="login-form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <p class="error-message" id="login-error">Invalid username or password</p>
+            </div>
+
+            <button type="submit" class="login-btn">Log In</button>
+            
+            <div class="return-home">
+                <a href="index.html">Return to Home</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="otherJS/hamberger.js"></script>
+    <script>
+        // Show error message if login fails
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('error')) {
+            document.getElementById('login-error').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

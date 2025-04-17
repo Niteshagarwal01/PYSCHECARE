@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Bot | PsycheCare</title>
+
+    <link rel="icon" href="../Images/B_icon01.png">
+    <link rel="stylesheet" href="../otherStylesheet/common.css">
+    <link rel="stylesheet" href="../otherStylesheet/chatBot.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/1b2b6a64da.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Floating circles for consistent design across all pages -->
+    <div class="floating-circle circle-1"></div>
+    <div class="floating-circle circle-2"></div>
+    <div class="floating-circle circle-3"></div>
+    <div class="floating-circle circle-4"></div>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="logo-cantainer">
+            <h2 class="logo">PsycheCare.</h2>
+        </div>
+
+        <div class="nav-and-btn-cont">
+            <div class="nav-list-cont">
+                <ul class="nav-ul">
+                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href="chatBot.html" class="active">CHAT BOT</a></li>
+                    <li><a href="statistics.html">STATISTICS</a></li>
+                    <li><a href="../contact.html">CONTACT</a></li>
+                    <li><a href="../login.html">LOGIN</a></li>
+                </ul>
+            </div>
+            
+            <div class="hamBurger">
+                <diV class="line line1"></diV>
+                <div class="mid-line-cont">
+                    <div class="line mid-line1"></div>
+                    <div class="line mid-line2"></div>
+                </div>
+                <diV class="line line3"></diV>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-view-nav-cont" id="mobile-nav">
+        <div class="mobile-view-nav-head">
+            <p>Menu</p>
+        </div>
+
+        <div class="mobile-view-nav-list">
+            <ul>
+                <li><a href="../index.html" class="mobile-view-list">HOME</a></li>
+                <li><a href="chatBot.html" class="mobile-view-list active">CHAT BOT</a></li>
+                <li><a href="statistics.html" class="mobile-view-list">STATISTICS</a></li>
+                <li><a href="../contact.html" class="mobile-view-list">CONTACT</a></li>
+                <li><a href="../login.html" class="mobile-view-list">LOGIN</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Updated chatbot section with modern design -->
+    <div class="back-to-home">
+        <a href="../index.html"><h1><i class="fas fa-long-arrow-alt-right back-to-home-arrow"></i></h1></a>
+    </div>
+
+    <div class="chatbot-container">
+        <div class="chatbot-intro fade-in-section">
+            <h1>AI Mental Health <span>Assistant</span></h1>
+            <p>Talk freely about your thoughts and feelings with our AI assistant designed to provide support and guidance for mental health concerns.</p>
+        </div>
+
+        <div class="chatbot-box-container fade-in-section">
+            <div class="chatbot-features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Private & Secure</h3>
+                        <p>Your conversations are completely private and not stored</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>AI Powered</h3>
+                        <p>Utilizes advanced natural language processing</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Supportive</h3>
+                        <p>Designed to listen and provide helpful responses</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="chatbot" class="main-card">
+                <div class="main-title">
+                    <div class="bot-avatar">
+                        <img src="../Images/illustration-new/home-bot-img.png" alt="Chatbot Avatar">
+                    </div>
+                    <span>Mental Health Assistant</span>
+                </div>
+
+                <main class="msger-chat">
+                    <div class="msg left-msg">
+                        <div class="msg-img">
+                            <img src="../Images/illustration-new/home-bot-img.png" alt="Bot">
+                        </div>
+                        <div class="msg-bubble">
+                            <div class="msg-info">
+                                <div class="msg-info-name">PsycheCare Assistant</div>
+                                <div class="msg-info-time" id="first-message-time"></div>
+                            </div>
+                            <div class="msg-text">
+                                Hello! I'm your mental health assistant. Feel free to share your thoughts or ask me questions about mental health. I'm here to listen and support you.
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <form class="msger-inputarea">
+                    <input type="text" class="msger-input" id="textInput" placeholder="Type your message...">
+                    <button type="submit" class="msger-send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <a id="FOOTER"></a>
+    <div class="footer">
+        <div class="footer-text-cont">
+            <h2>GET IN TOUCH.</h2>
+            <P>I would love to hear from you friend &#60;3</P>
+        </div>
+
+        <div class="social-icon-cont">
+            <div class="social-head">
+                <h2 class="logo footer-logo">PsycheCare.</h2>
+            </div>
+
+            <div class="icons">
+                <ul>
+                    <li><a href="https://github.com/niteshagarwal"><i class="fab fa-github-square"></i></a></li>
+                    <li><a href="mailto:niteshagarwal@example.com" target="_blank"><i class="far fa-envelope"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/niteshagarwal/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="copy-rights">Thank You :)</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../otherJS/hamberger.js"></script>
+    <script src="../otherJS/newChatBot.js"></script>
+</body>
+</html>

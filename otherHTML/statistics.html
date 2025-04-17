@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics | PsycheCare</title>
+
+    <script src="https://kit.fontawesome.com/1b2b6a64da.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="../Images/B_icon01.png">
+    <link rel="stylesheet" href="../otherStylesheet/common.css">
+    <link rel="stylesheet" href="../otherStylesheet/statistics.css">
+</head>
+<body>
+    <!-- Floating circles for consistent design across all pages -->
+    <div class="floating-circle circle-1"></div>
+    <div class="floating-circle circle-2"></div>
+    <div class="floating-circle circle-3"></div>
+    <div class="floating-circle circle-4"></div>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="logo-cantainer">
+            <h2 class="logo">PsycheCare.</h2>
+        </div>
+
+        <div class="nav-and-btn-cont">
+            <div class="nav-list-cont">
+                <ul class="nav-ul">
+                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href="chatBot.html">CHAT BOT</a></li>
+                    <li><a href="statistics.html" class="active">STATISTICS</a></li>
+                    <li><a href="../contact.html">CONTACT</a></li>
+                    <li><a href="../login.html">LOGIN</a></li>
+                </ul>
+            </div>
+            
+            <div class="hamBurger">
+                <diV class="line line1"></diV>
+                <div class="mid-line-cont">
+                    <div class="line mid-line1"></div>
+                    <div class="line mid-line2"></div>
+                </div>
+                <diV class="line line3"></diV>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-view-nav-cont" id="mobile-nav">
+        <div class="mobile-view-nav-head">
+            <p>Menu</p>
+        </div>
+
+        <div class="mobile-view-nav-list">
+            <ul>
+                <li><a href="../index.html" class="mobile-view-list">HOME</a></li>
+                <li><a href="chatBot.html" class="mobile-view-list">CHAT BOT</a></li>
+                <li><a href="statistics.html" class="mobile-view-list active">STATISTICS</a></li>
+                <li><a href="../contact.html" class="mobile-view-list">CONTACT</a></li>
+                <li><a href="../login.html" class="mobile-view-list">LOGIN</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Statistics Section -->
+    <div class="whole-staticstics-cont">
+        <div class="statistics-head fade-in-section">
+            <h1>Mental Health <span>Statistics</span></h1>
+            <p>These statistics demonstrate the importance of prioritizing mental health in our society</p>
+        </div>
+
+        <div class="statistics-table-cont fade-in-section">
+            <div class="statistics-table-head">
+                <p>Mental Health related disorders - 2022</p>
+
+                <form>
+                    <select class="select-country" id="country-dropDown" onchange="addCountry(this)">
+                        <option value="none">Add Country</option>
+                    </select>
+                </form>
+
+                <div class="btn-container">
+                    <button class="remove-country-btn">Remove Country</button>
+                </div>
+            </div>
+
+            <div class="statistics-table1-cont">
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
+
+            <p class="source-text">Data from: Our World in Data</p>
+        </div>
+
+        <div class="statistics-insights fade-in-section">
+            <h2>Key Insights</h2>
+            <div class="insights-container">
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Global Impact</h3>
+                    <p>Nearly 1 billion people worldwide are living with a mental disorder</p>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Economic Burden</h3>
+                    <p>Mental health conditions cost the global economy US$ 1 trillion each year in lost productivity</p>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Treatment Gap</h3>
+                    <p>More than 75% of people with mental disorders in low and middle-income countries receive no treatment</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="error-msg-cont">
+        <h3>Some ERROR! occurred</h3>
+        <button class="error-btn">Click Me</button>
+    </div>
+
+    <!-- Footer -->
+    <a id="FOOTER"></a>
+    <div class="footer">
+        <div class="footer-text-cont">
+            <h2>GET IN TOUCH.</h2>
+            <P>I would love to hear from you friend &#60;3</P>
+        </div>
+
+        <div class="social-icon-cont">
+            <div class="social-head">
+                <h2 class="logo footer-logo">PsycheCare.</h2>
+            </div>
+
+            <div class="icons">
+                <ul>
+                    <li><a href="https://github.com/niteshagarwal"><i class="fab fa-github-square"></i></a></li>
+                    <li><a href="mailto:niteshagarwal@example.com" target="_blank"><i class="far fa-envelope"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/niteshagarwal/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="copy-rights">Thank You :)</p>
+    </div>
+
+    <script src="../otherJS/hamberger.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="../otherJS/data.js"></script>
+    <script src="../otherJS/statistics.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation class
+            const fadeElements = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeIn 0.8s forwards ease';
+                        entry.target.style.opacity = 1;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            fadeElements.forEach(el => {
+                observer.observe(el);
+                el.style.opacity = 0;
+            });
+        });
+    </script>
+</body>
+</html>
