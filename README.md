@@ -43,6 +43,8 @@ PsycheCare ensures sustainability and growth through diverse revenue options, in
 PsycheCare aims to make mental health support accessible, personal, and stigma-free. By combining technology with empathy, we help users find a sense of purpose, meaning, and balance in their everyday lives.
 
 ---
+
+### 📷 Screenshots
 ![image](https://github.com/user-attachments/assets/b359ca30-64c7-47fb-bc13-8e463b834327)
 
 ![image](https://github.com/user-attachments/assets/74385c08-67e5-4477-97ec-2a5b9ad9f783)
