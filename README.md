@@ -44,4 +44,5 @@ PsycheCare aims to make mental health support accessible, personal, and stigma-f
 
 ---
 
+![image](https://github.com/user-attachments/assets/74385c08-67e5-4477-97ec-2a5b9ad9f783)
 
