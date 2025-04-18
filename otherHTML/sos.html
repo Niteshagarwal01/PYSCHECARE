@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0e0e2c, #1a1a40);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .main-content {
+            padding-top: 80px;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .circle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, #6c5ce7, #2f2fa2);
+            opacity: 0.3;
+            filter: blur(40px);
+            animation: float 10s infinite ease-in-out;
+        }
+
+        .circle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .circle:nth-child(2) { bottom: 15%; right: 15%; animation-delay: 2s; }
+        .circle:nth-child(3) { top: 50%; left: 50%; animation-delay: 4s; }
+        .circle:nth-child(4) { top: 70%; left: 20%; animation-delay: 6s; }
+        .circle:nth-child(5) { top: 30%; right: 25%; animation-delay: 8s; }
+        .circle:nth-child(6) { bottom: 30%; left: 30%; animation-delay: 10s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 3rem 2rem;
+        }
+
+        .page-section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(108, 92, 231, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #a29bfe;
+            margin-bottom: 2rem;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #a29bfe, 0 0 20px #a29bfe, 0 0 30px #6c5ce7; }
+            to { text-shadow: 0 0 20px #a29bfe, 0 0 30px #6c5ce7, 0 0 40px #2f2fa2; }
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #81ecec;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #6c5ce7;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .emergency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .emergency-contact {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #6c5ce7;
+            transition: all 0.3s ease;
+        }
+
+        .emergency-contact:hover {
+            transform: translateX(10px);
+            background: rgba(108, 92, 231, 0.2);
+        }
+
+        .emergency-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff7675;
+            margin: 0.5rem 0;
+            animation: pulse 2s infinite;
+        }
+
+        .emergency-description {
+            font-size: 0.9rem;
+            color: #b2bec3;
+            margin-top: 0.5rem;
+        }
+
+        .breathing-exercise {
+            text-align: center;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .breathing-circle {
+            width: 200px;
+            height: 200px;
+            margin: 2rem auto;
+            border-radius: 50%;
+            background: radial-gradient(circle, #6c5ce7, #a29bfe);
+            box-shadow: 0 0 50px #a29bfe;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            position: relative;
+            animation: pulse 4s infinite;
+        }
+
+        .breathing-circle::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle, #6c5ce7, transparent);
+            animation: breathe 8s infinite ease-in-out;
+        }
+
+        .breathing-text {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            color: #a29bfe;
+            animation: textPulse 4s infinite;
+        }
+
+        .breathing-instructions {
+            margin-top: 2rem;
+            color: #b2bec3;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        @keyframes textPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+
+        .breathing-steps {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .breathing-step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            width: 150px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .breathing-step:hover {
+            transform: translateY(-5px);
+            background: rgba(108, 92, 231, 0.2);
+        }
+
+        .breathing-step i {
+            font-size: 2rem;
+            color: #6c5ce7;
+            margin-bottom: 0.5rem;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tip-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            background: rgba(108, 92, 231, 0.2);
+        }
+
+        .tip-card h3 {
+            color: #74b9ff;
+            margin-bottom: 1rem;
+        }
+
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #6c5ce7, transparent);
+            margin: 3rem 0;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 30px rgba(108, 92, 231, 0.2);
+        }
+
+        .nav-ul {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-ul li a:hover {
+            background: rgba(108, 92, 231, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .sos-link {
+            color: #ff7675 !important;
+            font-weight: bold !important;
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-cantainer">
+            <h2 class="logo">PsycheCare.</h2>
+        </div>
+
+        <div class="nav-and-btn-cont">
+            <div class="nav-list-cont">
+                <ul class="nav-ul">
+                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href="../index.html#SECTION-3">CHAT BOT</a></li>
+                    <li><a href="statistics.html">STATISTICS</a></li>
+                    <li><a href="../contact.html">CONTACT</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
+                    <li class="nav-separator"></li>
+                    <li><a href="sos.html" class="sos-link">🆘 SOS</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="background">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+
+        <div class="container">
+            <h1><i class="fas fa-bolt"></i> Emergency SOS</h1>
+
+            <div class="page-section">
+                <h2><i class="fas fa-phone-alt"></i> Indian Emergency Contacts</h2>
+                <div class="emergency-grid">
+                    <div class="emergency-contact">
+                        <h3>National Mental Health Helpline</h3>
+                        <p class="emergency-number">1800-599-0019</p>
+                        <p class="emergency-description">24/7 mental health support and counseling</p>
+                    </div>
+                    <div class="emergency-contact">
+                        <h3>Vandrevala Foundation</h3>
+                        <p class="emergency-number">1860-266-2345</p>
+                        <p class="emergency-description">Mental health support and crisis intervention</p>
+                    </div>
+                    <div class="emergency-contact">
+                        <h3>iCall Helpline</h3>
+                        <p class="emergency-number">9152987821</p>
+                        <p class="emergency-description">Professional counseling and support</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="page-section">
+                <h2><i class="fas fa-globe"></i> International Emergency Contacts</h2>
+                <div class="emergency-grid">
+                    <div class="emergency-contact">
+                        <h3>National Suicide Prevention Lifeline</h3>
+                        <p class="emergency-number">988</p>
+                        <p class="emergency-description">Available 24/7 for emotional support</p>
+                    </div>
+                    <div class="emergency-contact">
+                        <h3>Crisis Text Line</h3>
+                        <p class="emergency-number">Text HOME to 741741</p>
+                        <p class="emergency-description">24/7 support via text message</p>
+                    </div>
+                    <div class="emergency-contact">
+                        <h3>Local Emergency Services</h3>
+                        <p class="emergency-number">911</p>
+                        <p class="emergency-description">For immediate life-threatening emergencies</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="page-section">
+                <h2><i class="fas fa-wind"></i> Breathing Exercise</h2>
+                <div class="breathing-exercise">
+                    <div class="breathing-circle"></div>
+                    <p class="breathing-text">Click to Start</p>
+                    <div class="breathing-instructions">
+                        <p>Click the circle to start the breathing exercise</p>
+                        <p>Follow the circle's movement and the instructions</p>
+                    </div>
+                    <div class="breathing-steps">
+                        <div class="breathing-step">
+                            <i class="fas fa-lungs"></i>
+                            <p>Inhale for 4 seconds</p>
+                        </div>
+                        <div class="breathing-step">
+                            <i class="fas fa-pause"></i>
+                            <p>Hold for 4 seconds</p>
+                        </div>
+                        <div class="breathing-step">
+                            <i class="fas fa-wind"></i>
+                            <p>Exhale for 4 seconds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="page-section">
+                <h2><i class="fas fa-lightbulb"></i> Quick Tips</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h3>Grounding</h3>
+                        <p>Focus on 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, 1 you can taste.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>Call a Friend</h3>
+                        <p>Talking to someone can be the quickest way to get support.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>Take a Break</h3>
+                        <p>Step away from the situation and take a few deep breaths.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>Write it Down</h3>
+                        <p>Journaling your thoughts can help process emotions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../otherJS/hamberger.js"></script>
+    <script src="../otherJS/sos.js"></script>
+</body>
+</html>
+
