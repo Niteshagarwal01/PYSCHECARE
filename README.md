@@ -5,7 +5,7 @@
 
 ### 🌟 Key Features
 
-- *Arya – AI Chatbot Assistant*  
+- *Arya – AI Chatbot Assistant* *(to access this bot Contact to me)* 
   Meet Arya, your personal mental health companion. Available 24/7, Arya offers emotional support, coping strategies, and guidance through difficult times. Arya is also equipped to handle initial consultations, check-ins, and mood tracking.
 
 - *Emergency SOS*  
